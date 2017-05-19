@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 	def index
 		@articles = Article.all
-		@lcbb_testbed = Lcbb::Testbed.find(1)
+		# @lcbb_testbed = Lcbb::Testbed.find(1)
 		#@lcbb_testbed = Lcbb::Testbed.new(name:"11")
 		#@lcbb_testbed.save
 		#render file:"/home/caiyuanmao/passenger.3000.log"
