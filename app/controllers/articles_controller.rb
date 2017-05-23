@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 	def index
 		@articles = Article.all
+		
+		# p @articles.attributes
 		# @lcbb_testbed = Lcbb::Testbed.find(1)
 		#@lcbb_testbed = Lcbb::Testbed.new(name:"11")
 		#@lcbb_testbed.save
