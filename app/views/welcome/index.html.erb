@@ -1,3 +1,8 @@
 <h1>博客家园</h1>
-<%= link_to '朱雨的博客', controller: 'articles' %>
+<% @users.each do |user| %>
+<p>
+<%= link_to "#{user.blog_name}"+'的博客', user_articles_path(user) %>
+</p>
+<% end %>
+
 

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  resources :users
+  resources :users do 
+  	# get '/articles/:id', to: 'users#show' , as 
+  	resources :articles, only: :index
+  end
   
   resources :articles do
     resources :comments

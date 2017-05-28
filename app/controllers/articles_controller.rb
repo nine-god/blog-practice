@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	def index
-		@articles = Article.all
+		@articles = User.find(params[:user_id]).articles
 		
 		# p @articles.attributes
 		# @lcbb_testbed = Lcbb::Testbed.find(1)
