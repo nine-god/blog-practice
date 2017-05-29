@@ -1,0 +1,14 @@
+<h1>Show aritcle</h1>
+<p>
+  <strong>Title:</strong>
+  <%= @user.name %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @user.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

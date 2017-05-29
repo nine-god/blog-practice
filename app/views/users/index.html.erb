@@ -1,0 +1,14 @@
+<h1>用户列表</h1>
+<%= link_to '注册新用户', new_user_path %>
+<table>
+   <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to "#{user.name}", user_path(user) %></td>
+      <td>
+      <%= link_to '编辑', edit_user_path(user) %>
+      <%= link_to '删除', user_path(user),
+              method: :delete,
+              data: { confirm: '删除后不可恢复，确认需要删除吗？' } %></td>
+    </tr>
+  <% end %>
+</table>

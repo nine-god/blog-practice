@@ -1,21 +1,21 @@
 class ArticlesController < ApplicationController
 	def index
-		@articles = User.find(params[:user_id]).articles
+		if params[:user_id].nil?
+			@articles = Article.all
+		else
+			@user = User.find(params[:user_id])
+			@articles = @user.articles
+			
+		end
 		
-		# p @articles.attributes
-		# @lcbb_testbed = Lcbb::Testbed.find(1)
-		#@lcbb_testbed = Lcbb::Testbed.new(name:"11")
-		#@lcbb_testbed.save
-		#render file:"/home/caiyuanmao/passenger.3000.log"
-		#render js: "alert('Hello Rails');"
-		#render json: @lcbb_testbed
-		#render plain: "raw"
 	end
 	def new
-		@article = Article.new
+		@user = User.find(params[:user_id])
+		@article = @user.articles.new
 	end
 	def edit
 		@article = Article.find(params[:id])
+		@user = User.find(@article.user_id)
 	end
 	def update
 		@article = Article.find(params[:id])
@@ -27,7 +27,8 @@ class ArticlesController < ApplicationController
 		end
 	end
 	def create
-		@article = Article.new(article_params)
+		@user = User.find(params[:user_id])
+		@article = @user.articles.new(article_params)
 
 		if @article.save
 			redirect_to @article
@@ -39,12 +40,13 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
+		@user = User.find(@article.user_id)
 	end
 	def destroy
-	  @article = Article.find(params[:id])
-	  @article.destroy
-	 
-	  redirect_to articles_path
+		@article = Article.find(params[:id])
+		@article.destroy
+		@user = User.find(@article.user_id)
+		redirect_to user_articles_path(@user)
 	end	
 
 	private
