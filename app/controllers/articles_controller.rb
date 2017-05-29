@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	layout "blog"
 	def index
 		if params[:user_id].nil?
 			@articles = Article.all
