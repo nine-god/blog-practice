@@ -2,8 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :users do 
-  	# get '/articles/:id', to: 'users#show' , as 
-  	resources :articles, only: [:index, :new,:create]
+  	resources :articles
   end
   
   resources :articles do
