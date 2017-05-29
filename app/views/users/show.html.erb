@@ -1,14 +1,17 @@
-<h1>Show aritcle</h1>
+<h1>用户信息</h1>
 <p>
-  <strong>Title:</strong>
+  <strong>用户名:</strong>
   <%= @user.name %>
 </p>
  
 <p>
-  <strong>Text:</strong>
+  <strong>密码:</strong>
   <%= @user.password %>
 </p>
-
+<p>
+  <strong>博客名:</strong>
+  <%= @user.blog_name %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

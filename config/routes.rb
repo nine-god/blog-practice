@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :users do 
-  	resources :articles
+  	resources :articles,only: [:index,:new,:create,:edit,:update]
   end
   
-  resources :articles do
+  resources :articles ,only: [:show,:destroy] do
     resources :comments
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
