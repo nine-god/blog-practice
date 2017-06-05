@@ -12,13 +12,17 @@
     <div id="wrapper">
       <div id="header">
         <div class="pull-home">
-          <%= link_to "博客家园" ,root_path%>
+          <%= link_to "博客" ,root_path,{:title => "频道首页"} %>
         </div>
         <div class="pull-menu">
           <ul>
-            <li><a href="#news">登陆</a></li>
-            <li><a href="#contact">注册</a></li>
-            <li><a href="#about">设置</a></li>
+            <% if user_signed_in? %> 
+              <li><%= link_to current_user.email,user_path(current_user.id) %></li>
+              <li><%= link_to "退出" ,destroy_user_session_path , method: :delete%></li>
+            <% else %>
+              <li><%= link_to "登陆" ,new_user_session_path %></li>
+              <li><%= link_to "注册" ,new_user_registration_path%></li>
+            <% end %>
           </ul>
         </div>
       </div>

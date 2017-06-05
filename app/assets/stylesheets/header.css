@@ -1,64 +1,17 @@
-
-
-
-body {
-	text-align: center;
-	font-family: PingFangSC-Regular, Verdana, Arial, '微软雅黑','宋体';
-	font-size: 14px;
-}
-
-#wrapper {
-	margin: 0 auto;
-	padding: 0;
-	border: 0;
-	width:100%;
-	/*width: 1239px;*/
-	background-color:#b0e0e6;
-	text-align: left;
-}
-
-#header {
-	margin:auto;
-	width:100%;
-	height:40px;
-	text-align: left;
-	float:left;
-	/*margin: 0 0 0 12px;*/
-	padding: 0;
-	border: 0;
-	width: 100%;
-	background-color:#b0e0e6;
-	/*background-color: #fdfcf8;*/
-}
-
-#maincontent {
-	/*margin:auto;*/
-	margin: 0 0 0 10%;
-	width:100%;
-	float:left;
-}
-#footer {
-	/*margin:auto;*/
-	margin: 0 0 0 10%;
-	width:100%;
-	float:left;
-	clear: both;
-}
-
-
 /*导航区块*/
 #header a {
 	float:left;
-	width:2em;
+	width:auto;
 	text-decoration:none;
-	color:white;
-	font-size: 20x;
-	background-color:purple;
-	/*background-color:transparent;*/
-	padding:0.2em 0.6em;
-	border-right:1px solid white;
+	color:#ddd;
+	
+	font-size: 21x;
+	background-color: #c00;
+	padding:4px 12px;
+	
 }
 #header a:hover {
+	color:white;
 	background-color:#ff3300
 }
 
@@ -67,21 +20,28 @@ body {
 	float:left;
 	margin: 0 0 0 10%;
 	width: 120px;
+
 }
 #header div.pull-home a {
-	width:4em;
+	width:2em;
+	font-size: 21px;
+	color:white;
+	font-weight:bold;
 }
 #header div.pull-home a:hover {
-	background-color:#ff3300
+	background-color: #c00;
+
 }
 
 #header div.pull-menu {
 	float:right;
+	margin: 0 10% 0 0;
 	width: 320px;
+	text-align: right;
 }
 
 #header div.pull-menu ul {
-	float:left;
+	float:right;
 	width:100%;
 	padding:0;
 	margin:0;
@@ -91,6 +51,9 @@ body {
 	display:inline
 }
 #header div.pull-menu a {
-	width:2em;
+	padding:9px 12px;
+	/*height:auto;*/
+	background-color:transparent;
+	border-right:1px solid white;
 }
 
