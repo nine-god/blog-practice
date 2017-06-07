@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :blog do
+    get 'welcome/index'
+  end
+
   devise_for :users
-  root 'welcome#index'
+  root 'welcome#index',as: 'welcome_index'
   resources :users do 
   	resources :articles,only: [:index,:new,:create,:edit,:update]
   end

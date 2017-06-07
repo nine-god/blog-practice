@@ -6,53 +6,50 @@
 	color:#ddd;
 	
 	font-size: 21x;
-	background-color: #c00;
-	padding:4px 12px;
+
+	padding:4px 4px;
+	margin: 0 3px 0 3px;
 	
 }
 #header a:hover {
 	color:white;
-	background-color:#ff3300
 }
 
 
 #header div.pull-home {
 	float:left;
 	margin: 0 0 0 10%;
-	width: 120px;
+	width: 320px;
 
 }
 #header div.pull-home a {
-	width:2em;
+	float:left;
+	width:auto;
+	padding:4px 8px 4px 8px;
+	margin:0;
+	list-style-type:none;
+	display:inline;
 	font-size: 21px;
 	color:white;
 	font-weight:bold;
 }
-#header div.pull-home a:hover {
+#header div.pull-home a.root {
 	background-color: #c00;
-
 }
+
 
 #header div.pull-menu {
 	float:right;
 	margin: 0 10% 0 0;
-	width: 320px;
+	width: 300px;
 	text-align: right;
 }
 
-#header div.pull-menu ul {
-	float:right;
-	width:100%;
-	padding:0;
-	margin:0;
-	list-style-type:none;
-}
-#header div.pull-menu li {
-	display:inline
-}
 #header div.pull-menu a {
-	padding:9px 12px;
-	/*height:auto;*/
+	float:right;
+	width:auto;
+	padding:9px 8px 9px 8px;
+	display:inline;
 	background-color:transparent;
 	border-right:1px solid white;
 }

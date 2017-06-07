@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>博客家园</title>
+    <title>
+    <% if @user.nil?%>
+    <%= "博客频道" %>
+    <% else %>
+    <%= "博客频道" %>
+    <%= "#{@user.blog_name}" %>
+    <% end %>
+    </title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'welcome', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'welcome', 'data-turbolinks-track': 'reload' %>
-           <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
+    <%= stylesheet_link_tag    'blog', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'blog', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <div id="header">
+        <div class="pull-home">
+          <%= link_to "小猴子" ,welcome_index_path,{:title => "首页",:class=> "root"} %>
+          <%= link_to "博客" ,blog_welcome_index_path,{:title => "频道首页",} %>
+        </div>
+        <div class="pull-menu">
+            <% if user_signed_in? %> 
+              <%= link_to "退出" ,destroy_user_session_path , method: :delete%>
+              <%= link_to current_user.email,user_path(current_user.id) %>
+            <% else %>
+              <%= link_to "注册" ,new_user_registration_path%>
+              <%= link_to "登陆" ,new_user_session_path %>
+            <% end %>
+        </div>
+      </div>
+
+   <!--    <div id="navbar" >
+        <nav >
+          <ul>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </div> -->
+
+      <div id='maincontent'>
+        <%= yield %>
+      </div>
+
+      <div id="footer">
+      </div>
+
+    </div>
   </body>
 </html>
