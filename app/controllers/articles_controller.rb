@@ -4,9 +4,13 @@ class ArticlesController < ApplicationController
 		if params[:user_id].nil?
 			@articles = Article.all
 		else
-			@user = User.find(params[:user_id])
-			@articles = @user.articles
-			
+			begin
+				@user = User.find(params[:user_id])
+				@articles = @user.articles
+			rescue
+				logger.error "无效的用户id #{params[:user_id]}"
+				redirect_to blog_welcome_index_path, notice: '无效的用户id'
+			end
 		end
 		
 	end

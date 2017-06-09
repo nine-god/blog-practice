@@ -1,4 +1,6 @@
-
+.notice {
+	background-color:#F1938C;
+}
 body {
 	text-align: center;
 	font-family: PingFangSC-Regular, Verdana, Arial, '微软雅黑','宋体';
@@ -29,14 +31,14 @@ body {
 
 #maincontent {
 	/*margin:auto;*/
-	margin: 0 0 0 10%;
-	width:100%;
+	margin: 0 10% 0 10%;
+	width:80%;
 	float:left;
 }
 #footer {
 	/*margin:auto;*/
-	margin: 0 0 0 10%;
-	width:100%;
+	margin: 0 10% 0 10%;
+	width:80%;
 	float:left;
 	clear: both;
 }
