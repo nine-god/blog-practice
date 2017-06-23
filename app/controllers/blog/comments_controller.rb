@@ -1,0 +1,20 @@
+class Blog::CommentsController < ApplicationController
+  def create
+    @user = User.find(params[:user_id])
+    @article = @user.articles.find(params[:article_id])
+    @comment = @article.comments.create(comment_params)
+    redirect_to blog_user_article_path(@user,@article)
+  end
+  def destroy
+  @user = User.find(params[:user_id])
+  @article = @user.articles.find(params[:article_id])
+  @comment = @article.comments.find(params[:id])
+  @comment.destroy
+
+  redirect_to blog_user_article_path(@user,@article)
+  end
+  private
+  def comment_params
+    params.require(:comment).permit(:commenter, :body)
+  end
+end

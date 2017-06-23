@@ -13,7 +13,7 @@
 <%= render @article.comments %>
 
 <h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+<%= render 'blog/comments/form' %>
 
-<%= link_to 'Edit', edit_user_article_path(@user,@article) %> |
-<%= link_to 'Back', user_articles_path(@user) %>
+<%= link_to 'Edit', edit_blog_user_article_path(@user,@article) %> |
+<%= link_to 'Back', blog_user_articles_path(@user) %>
