@@ -19,8 +19,8 @@
     <div id="wrapper">
       <div id="header">
         <div class="pull-home">
-          <%= link_to "小猴子" ,welcome_index_path,{:title => "首页",:class=> "root"} %>
-          <%= link_to "博客" ,blog_welcome_index_path,{:title => "频道首页",} %>
+          <%= link_to "小猴子" ,welcome_index_path,{title: "首页",class: "root"} %>
+          <%= link_to "博客" ,blog_welcome_index_path,{title: "频道首页"} %>
         </div>
         <div class="pull-menu">
             <% if user_signed_in? %> 
