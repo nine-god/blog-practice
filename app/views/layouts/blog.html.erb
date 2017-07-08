@@ -3,9 +3,8 @@
   <head>
     <title>
     <% if @user.nil?%>
-    <%= "博客频道" %>
+    <%= "小猴子博客" %>
     <% else %>
-    <%= "博客频道" %>
     <%= "#{@user.blog_name}" %>
     <% end %>
     </title>
@@ -19,13 +18,13 @@
     <div id="wrapper">
       <div id="header">
         <div class="pull-home">
-          <%= link_to "小猴子" ,welcome_index_path,{title: "首页",class: "root"} %>
-          <%= link_to "博客" ,blog_welcome_index_path,{title: "频道首页"} %>
+          <%= link_to "小猴子" ,blog_welcome_index_path,{title: "log",class: "root"} %>
+          <%= link_to "博客" ,blog_welcome_index_path,{title: "首页"} %>
         </div>
         <div class="pull-menu">
             <% if user_signed_in? %> 
               <%= link_to "退出" ,destroy_user_session_path , method: :delete%>
-              <%= link_to current_user.email,user_path(current_user.id) %>
+              <%= link_to current_user.email,"" %>
             <% else %>
               <%= link_to "注册" ,new_user_registration_path%>
               <%= link_to "登陆" ,new_user_session_path %>

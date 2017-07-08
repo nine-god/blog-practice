@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index',as: 'welcome_index'
+  root 'blog/welcome#index'
 
   namespace :blog do
     get 'welcome/index'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-    resources :users
+  resources :users
 
 
 

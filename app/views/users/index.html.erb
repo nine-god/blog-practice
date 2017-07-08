@@ -1,5 +1,5 @@
 <h1>用户列表</h1>
-<%= link_to '注册新用户', new_user_path %>
+<p> 用户数量 : <%= @users.size%> 个</p>
 <table>
    <% @users.each do |user| %>
     <tr>
