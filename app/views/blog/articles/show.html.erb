@@ -1,18 +1,14 @@
-<h1>Show aritcle</h1>
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h1><%= @article.title %></h1>
+
  
 <p>
-  <strong>Text:</strong>
   <%= @article.text %>
 </p>
 
-<h2>Comments</h2>
+<p><%= "共收到 #{@article.comments.size} 条回复 "%></p>
 <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
+<p>回复:</p>
 <%= render 'blog/comments/form' %>
 
 <%= link_to 'Edit', edit_blog_user_article_path(@user,@article) %> |

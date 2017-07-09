@@ -18,13 +18,13 @@
     <div id="wrapper">
       <div id="header">
         <div class="pull-home">
-          <%= link_to "小猴子" ,blog_welcome_index_path,{title: "log",class: "root"} %>
+          <%= link_to "小猴子" ,blog_welcome_index_path,{title: "logo",class: "root"} %>
           <%= link_to "博客" ,blog_welcome_index_path,{title: "首页"} %>
         </div>
         <div class="pull-menu">
             <% if user_signed_in? %> 
               <%= link_to "退出" ,destroy_user_session_path , method: :delete%>
-              <%= link_to current_user.email,"" %>
+              <%= link_to current_user.email,user_path(current_user.id) %>
             <% else %>
               <%= link_to "注册" ,new_user_registration_path%>
               <%= link_to "登陆" ,new_user_session_path %>
@@ -34,6 +34,9 @@
 
 
       <div id='maincontent'>
+      <% if notice %>
+        <div class="notice"><%= flash.now[:notice] %></div>
+      <% end %>
       <div id='test'></div>
         <%= yield %>
       </div>

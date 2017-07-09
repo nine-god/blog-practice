@@ -1,6 +1,4 @@
-<% if notice %>
-  <div class="notice"><%= flash.now[:notice] %></div>
-<% end %>
+
 <% @users.each do |user| %>
 <p>
 <%= link_to "#{user.blog_name}"+'的博客', blog_user_articles_path(user) %>
