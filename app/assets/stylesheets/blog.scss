@@ -2,9 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*
- *= require app
- *= require header
+ *= require bootstrap
+ *= require unslider
  *= require_self
  */
 
- 
+body { padding-top: 50px; }
+
+.banner { position: relative; overflow: auto; }
+.banner li { list-style: none; }
+.banner ul li { float: left; }
+
+

@@ -1,4 +1,33 @@
+<div class="banner">
+	<ul>
+		<li style="background-image: url(<%= asset_path '1.png' %>);">
+			<div class="inner">
+				<h1>The jQuery slider that just slides.</h1>
+				<p>就是这个不到3kb的插件！没有奇特的特效或无用的标签。</p>
 
+				<a class="btn" href="#download">下载</a>
+			</div>
+		</li>
+
+		<li style="background-image: url(<%= asset_path '2.png' %>);">
+			<div class="inner">
+				<h1>Fluid, flexible, fantastically minimal.</h1>
+				<p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+				<a class="btn" href="#download">下载</a>
+			</div>
+		</li>
+
+		<li style="background-image: url(<%= asset_path '3.png' %>);">
+			<div class="inner">
+				<h1>开源</h1>
+				<p>Unslider的所有源码都托管在GitHub上。</p>
+
+				<a class="btn" href="//github.com/idiot/unslider">参与</a>
+			</div>
+		</li>
+	</ul>
+</div>
 <% @users.each do |user| %>
 <p>
 <%= link_to "#{user.blog_name}"+'的博客', blog_user_articles_path(user) %>
