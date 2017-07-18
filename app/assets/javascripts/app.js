@@ -1,20 +1,27 @@
-$(function() {
-    $('.banner').unslider({
-    	speed: 500,               //  The speed to animate each slide (in milliseconds)
-		delay: 3000,              //  The delay between slide animations (in milliseconds)
-		complete: function() {},  //  A function that gets called after every slide animation
+$(document).ready(function(){
+	// alert("1111")
+	var slidey =$('.banner').unslider({
+		speed: 500,               //  The speed to animate each slide (in milliseconds)
+		delay: 1000,              //  The delay between slide animations (in milliseconds)
+		complete: function() {
+		},  //  A function that gets called after every slide animation
 		keys: true,               //  Enable keyboard (left, right) arrow shortcuts
 		dots: true,               //  Display dot navigation
-		fluid: false              //  Support responsive design. May break non-responsive designs
-    });
+		fluid: true              //  Support responsive design. May break non-responsive designs
+	});
+
+	 data = slidey.data('unslider');
+	function hello(){
+
+
+		//  Start Unslider
+		data.start();
+	} 
+
+	window.setInterval(hello,2000); 
 });
 
 
-//var slidey = $('.banner').unslider(),
-    //data = slidey.data('unslider');
-
-//  Start Unslider
-//data.start();
 
 //  Pause Unslider
 //data.stop();
