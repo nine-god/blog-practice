@@ -6,6 +6,9 @@
 //= require bootstrap
 //= require unslider-min
 //= require turbolinks
+//= require jquery.hotkeys
+//= require bootstrap-wysiwyg
+//= require app
 
 $(document).on "turbolinks:load", ->
 	$('.banner').unslider(

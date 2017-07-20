@@ -1,9 +1,13 @@
 // Place all the styles related to the blog/welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// require bootstrap-responsive
 /*
  *= require bootstrap
  *= require unslider
+ *= require bootstrap-responsive.min
+ *= require font-awesome
+ *= require index
  *= require_self
  */
 
@@ -38,3 +42,6 @@ body {
 .unslider .unslider-nav li.unslider-active{     
     opacity: 1;   
 } 
+
+
+    #editor {overflow:scroll; max-height:300px}  
