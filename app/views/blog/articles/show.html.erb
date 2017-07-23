@@ -1,15 +1,17 @@
 <h1><%= @article.title %></h1>
 
- 
-<p>
-  <%= @article.text %>
-</p>
+ <div class="article_text">
 
+  <div id="show" ><%= @article.text %></div>
+  <!-- <%= @article.text %> -->
+  <text_area  id="article_text" hidden=true}><%= @article.text %></text_area>
+</div>
+<%= link_to 'Edit', edit_blog_user_article_path(@user,@article) %>
 <p><%= "共收到 #{@article.comments.size} 条回复 "%></p>
 <%= render @article.comments %>
 
 <p>回复:</p>
 <%= render 'blog/comments/form' %>
 
-<%= link_to 'Edit', edit_blog_user_article_path(@user,@article) %> |
+
 <%= link_to 'Back', blog_user_articles_path(@user) %>

@@ -1,6 +1,9 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+# 
+# 
+
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
@@ -8,6 +11,7 @@
 //= require turbolinks
 //= require jquery.hotkeys
 //= require bootstrap-wysiwyg
+//= require google-code-prettify/prettify
 //= require app
 
 $(document).on "turbolinks:load", ->
@@ -19,5 +23,10 @@ $(document).on "turbolinks:load", ->
 		nav: true
 		arrows:{}
 		animation : "horizontal" # 规定动画效果 'horizontal', 从从左到右,'vertical'从上至下,'fade',淡入淡出
-
 	)
+	initToolbarBootstrapBindings()
+	$('#editor').wysiwyg()
+	window.prettyPrint && prettyPrint()
+	show_textarea()
+
+

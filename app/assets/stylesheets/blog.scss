@@ -2,12 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // require bootstrap-responsive
+// *= require bootstrap-responsive.min
+// 
+// 
+
 /*
  *= require bootstrap
  *= require unslider
- *= require bootstrap-responsive.min
- *= require font-awesome
  *= require index
+ *= require font-awesome
+ *= require bootstrap-combined.no-icons.min
  *= require_self
  */
 
@@ -44,4 +48,14 @@ body {
 } 
 
 
-    #editor {overflow:scroll; max-height:300px}  
+#editor {overflow:scroll; max-height:300px}
+
+div.article_text{
+	border-style: solid none solid none;
+	border-color: gray;
+}
+
+div.article_comment{
+	border-style: none none solid none;
+	border-color: gray;
+}
