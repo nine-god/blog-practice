@@ -50,9 +50,16 @@ body {
 
 #editor {overflow:scroll; max-height:300px}
 
+#editor blockquote {
+	border: none;
+}
+
 div.article_text{
 	border-style: solid none solid none;
 	border-color: gray;
+}
+div.article_text blockquote {
+	border: none;
 }
 
 div.article_comment{
