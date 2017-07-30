@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   root 'blog/welcome#index'
 
   namespace :blog do
-    get 'welcome/index'
+    resources :welcome do 
+      collection do
+        get "index"
+        get "home"
+        get "test_ajax"
+      end
+    end
     get 'articles/test' ,to: 'articles#test',as: 'articles_test'
     resources :users do 
       resources :articles do 

@@ -1,23 +1,18 @@
-<h1><%= "#{@user.blog_name}" %></h1>
-<!-- 
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %> -->
-<%= link_to '新建文章', new_blog_user_article_path(@user) %>
-<!--  <p id="demo"></p>
-<%= button_to "An article", blog_articles_test_path, {remote: true,method: :get} %> -->
-<table>
-   <% @articles.each do |article| %>
-    <tr>
-      <td><%= link_to "#{article.title}", blog_user_article_path(@user,article) %></td>
-      <td>
-      <%= link_to '编辑', edit_blog_user_article_path(@user,article) %>
-      <%= link_to '删除', blog_user_article_path(@user,article),
-              method: :delete,
-              data: { confirm: '删除后不可恢复，确认需要删除吗？' } %></td>
-    </tr>
-   
-  <% end %>
-</table>
+
+<div class="col-sm-8">
+  <h1><%= "#{@user.blog_name}" %></h1>
+  <table>
+     <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to "#{article.title}", blog_user_article_path(@user,article) %></td>
+        <td>
+        <%= link_to '编辑', edit_blog_user_article_path(@user,article) %>
+        <%= link_to '删除', blog_user_article_path(@user,article),method: :delete, data: { confirm: '删除后不可恢复，确认需要删除吗？' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="col-sm-4">
+  <%= link_to '新建文章', new_blog_user_article_path(@user) %>
+</div>
+

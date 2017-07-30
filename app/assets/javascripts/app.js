@@ -1,57 +1,7 @@
-// $(document).ready(function(){
-// 	// alert("1111")
+function synchronization(){
+	$('#article_text').html($('#editor').html());
 
-
-// });
-
-// // $(document).on "turbolinks:load", ->
-// //   alert "page has loaded!"
-// document.addEventListener("turbolinks:load", function() {
-// 	$('.banner').unslider({
-// 		autoplay:true, // 定义轮播是否自动执行，默认值不自动执行
-// 		speed: 500, // 每个幻灯片动画速度(以毫秒为单位)
-// 		delay: 5000, // 幻灯片动画之间的延迟(毫秒)
-// 		keys: true, // 启用键盘快捷键(左、右)箭头
-// 		nav: true,
-// 		arrows:{},
-// 		animation : "horizontal" // 规定动画效果 'horizontal', 从从左到右,'vertical'从上至下,'fade',淡入淡出
-
-// 	});
-// })
-// $('#editor').wysiwyg();
- // $(function(){
-    function initToolbarBootstrapBindings() {
-      var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
-            'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
-            'Times New Roman', 'Verdana'],
-            fontTarget = $('[title=Font]').siblings('.dropdown-menu');
-      $.each(fonts, function (idx, fontName) {
-          fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
-      });
-      $('a[title]').tooltip({container:'body'});
-    	$('.dropdown-menu input').click(function() {return false;})
-		    .change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
-        .keydown('esc', function () {this.value='';$(this).change();});
-
-      $('[data-role=magic-overlay]').each(function () { 
-        var overlay = $(this), target = $(overlay.data('target')); 
-        overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
-      });
-      $('#voiceBtn').hide();
-      // if ("onwebkitspeechchange"  in document.createElement("input")) {
-      //   var editorOffset = $('#editor').offset();
-      //   $('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+$('#editor').innerWidth()-35});
-      // } else {
-      //   $('#voiceBtn').hide();
-      // }
-    };
-
-  // });
-
-  function synchronization(){
-  	$('#article_text').html($('#editor').html());
-
-  };
+};
 
 
   // function synchronization(){
@@ -76,8 +26,9 @@
 
 function html_decode(str) {
     var s = "";
-    if (str.length == 0)
-        return "";
+    if (str.length == 0){
+      return "";
+    }  
     // s = str.replace(/&gt;/g, "&");
     s = str.replace(/&lt;/g, "<");
     s = s.replace(/&gt;/g, ">");
@@ -94,3 +45,36 @@ function show_textarea(){
 	$('#show').html(str);
 
 };
+function test_ajax(){
+
+	$.ajax({ 
+		url: "/blog/welcome/test_ajax", 
+		data: {test: "test123"},
+		type: 'POST', 
+		dataType: 'json',
+		 timeout: 1000, 
+		// context: document.body, 
+		success: function(data, textStatus){
+	        console.log(data)
+		},
+		error: function(data){
+			alert("/blog/welcome/test_ajax json error")
+		}
+	  });
+
+	$.ajax({ 
+		url: "/blog/welcome/test_ajax", 
+		data: {test: "test123"},
+		type: 'GET', 
+		dataType: 'xml',
+		 timeout: 1000, 
+		// context: document.body, 
+		success: function(data, textStatus){
+	        console.log(data)
+		},
+		error: function(data){
+			alert("/blog/welcome/test_ajax xml error")
+		}
+	  });
+
+}

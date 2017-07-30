@@ -1,17 +1,46 @@
-<h1><%= @article.title %></h1>
 
- <div class="article_text">
-
-  <div id="show" ><%= @article.text %></div>
-  <!-- <%= @article.text %> -->
-  <text_area  id="article_text" hidden=true}><%= @article.text %></text_area>
+<div class="row">
+	<div class="header">
+	</div>
+	<div class="col-sm-8">
+		<div class="panel panel-default">
+			<div>
+				<h1><%= @article.title %></h1>
+			</div>
+			<div id="show" >
+				<%= @article.text %>
+				<text_area  id="article_text" hidden=true}><%= @article.text %></text_area>
+			</div>
+			<div>
+			<%= link_to "111" ,"#" %>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="total panel-heading hide-ios">
+				共收到 <b><%= @article.comments.size %></b> 条回复
+			</div>
+			<div id="replies" lass="items panel-body">
+				<%= render @article.comments %>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading hide-ios">回复:</div>
+			<div class="panel-body">
+			<%= render 'blog/comments/form' %>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar col-sm-3">
+		<div id="article_sidebar" class="panel panel-default">
+			<% 5.times do|i|  %>
+			<p><%= " #{i=i+1} 条占位专用 "%></p>
+			<p>回复:</p>
+			<% end%>
+			<%= link_to '编辑', edit_blog_user_article_path(@user,@article) %> | <%= link_to '返回', blog_user_articles_path(@user) %>
+		</div>
+	</div>
 </div>
-<%= link_to 'Edit', edit_blog_user_article_path(@user,@article) %>
-<p><%= "共收到 #{@article.comments.size} 条回复 "%></p>
-<%= render @article.comments %>
-
-<p>回复:</p>
-<%= render 'blog/comments/form' %>
 
 
-<%= link_to 'Back', blog_user_articles_path(@user) %>
+
+

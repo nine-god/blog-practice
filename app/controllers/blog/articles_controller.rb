@@ -13,7 +13,7 @@ class Blog::ArticlesController < ApplicationController
 				redirect_to blog_welcome_index_url, notice: '无效的用户id'
 			end
 		end
-		
+
 	end
 
 	def new

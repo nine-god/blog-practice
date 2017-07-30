@@ -1,17 +1,9 @@
-<div class="banner">
-	<ul>
-<!-- 		<li><%= image_tag '1.png' %></li>
-		<li><%= image_tag '1.png' %></li>
-		<li><%= image_tag '1.png' %></li> -->
-		<li style="background-image: url(<%= asset_path '1.png' %>);"></li>
-		<li style="background-image: url(<%= asset_path '2.png' %>);"></li>
-		<li style="background-image: url(<%= asset_path '3.png' %>);"></li>
-	</ul>
-</div>
-<% @users.each do |user| %>
-<p>
-<%= link_to "#{user.blog_name}"+'的博客', blog_user_articles_path(user) %>
-</p>
-<% end %>
+<div>
+	<% @users.each do |user| %>
+	<div class="col-md-8">
+	<%= link_to "#{user.blog_name}"+'的博客', blog_user_articles_path(user) %>
+	</div>
+	<% end %>
+<div>
 
 

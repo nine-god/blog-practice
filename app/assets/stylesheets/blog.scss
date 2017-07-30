@@ -1,52 +1,19 @@
 // Place all the styles related to the blog/welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// require bootstrap-responsive
-// *= require bootstrap-responsive.min
-// 
-// 
 
 /*
  *= require bootstrap
- *= require unslider
  *= require index
  *= require font-awesome
- *= require bootstrap-combined.no-icons.min
+// require bootstrap-combined.no-icons.min
  *= require_self
  */
 
 body { 
-	padding-top: 50px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
+	padding-top: 65px;
+    background: #e9eaed;
  }
-
-.banner { position: relative; overflow: auto;text-align: center;}
-.banner li { list-style: none; height:450px;  }
-.banner ul li { float: left; }
-
-
-.unslider .unslider-nav { position: relative; text-align: center; bottom: 20px;}  
-.unslider .unslider-nav li {   
-    display: inline-block;   
-    width: 10px;   
-    height: 10px;   
-    margin: 0 10px 0 10px;   
-    text-indent: -999em;   
-    padding: 3px;
-    border: 3px solid #ffffff;   
-    border-radius: 12px;   
-    cursor: pointer;   
-    opacity: .4;   
-	-webkit-transition: background .5s, opacity .5s;
-	-moz-transition: background .5s, opacity .5s;
-	transition: background .5s, opacity .5s;
-}  
-.unslider .unslider-nav li.unslider-active{     
-    opacity: 1;   
-} 
-
 
 #editor {overflow:scroll; max-height:300px}
 
@@ -54,15 +21,46 @@ body {
 	border: none;
 }
 
-div.article_text{
-	border-style: solid none solid none;
-	border-color: gray;
-}
-div.article_text blockquote {
-	border: none;
+#show {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-div.article_comment{
-	border-style: none none solid none;
-	border-color: gray;
+
+#replies .reply {
+    margin: 0 -15px;
+    padding: 15px 15px;
+        padding-left: 15px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding-left: 74px;
 }
+
+#replies .reply .avatar {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+#replies .reply .infos {
+    min-height: 48px;
+}
+
+.avatar  {
+    border-radius: 120px;
+}
+
+footer.blog-footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+#article_sidebar {
+    position: fixed;
+    width: 292px;
+    text-align:center;
+}
+
+
+
