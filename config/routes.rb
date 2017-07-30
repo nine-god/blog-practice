@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get "index"
         get "home"
         get "test_ajax"
+        post "test_ajax"
       end
     end
     get 'articles/test' ,to: 'articles#test',as: 'articles_test'

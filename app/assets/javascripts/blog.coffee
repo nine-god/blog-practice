@@ -5,7 +5,7 @@
 
 //= require jquery
 //= require bootstrap
-
+//= require jquery_ujs
 //= require turbolinks
 //= require jquery.hotkeys
 //= require bootstrap-wysiwyg

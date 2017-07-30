@@ -9,6 +9,7 @@ class Blog::WelcomeController < ApplicationController
 	end
 
 	def test_ajax
+		p "1"*88
 		xml = "
 			<note>
 				<to>George</to>
