@@ -46,7 +46,7 @@ function show_textarea(){
 
 };
 function test_ajax(){
-
+alert(2222)
 	$.ajax({ 
 		url: "/blog/welcome/test_ajax", 
 		data: {test: "test123"},
@@ -78,3 +78,15 @@ function test_ajax(){
 	  });
 
 }
+
+// $("#test1234").on('click', function(){
+//     alert(2222)
+// })
+function test_jquery(){
+
+  $("#test_jquery").bind("click",function(){
+   alert(2222)
+  });
+
+}
+

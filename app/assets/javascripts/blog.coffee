@@ -16,6 +16,7 @@ $(document).on "turbolinks:load", ->
 	show_textarea()	
 	$('#editor').wysiwyg()
 	window.prettyPrint && prettyPrint()
+	test_jquery()
 
 
 
