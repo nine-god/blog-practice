@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'blog/welcome#index'
 
   namespace :blog do
+    resources :staticstics,only: [:index,:destroy]
     resources :welcome do 
       collection do
         get "index"
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
       end
     end
     get 'articles/test' ,to: 'articles#test',as: 'articles_test'
+
     resources :users do 
       resources :articles do 
         resources :comments

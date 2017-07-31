@@ -33,6 +33,7 @@
               <ul class="nav navbar-nav">
                 <li><%= link_to "社区" ,blog_welcome_index_path,{ title: "首页"} %></li>
                 <li><a href="#">Wiki</a></li>
+                <li><%= link_to "统计", blog_staticstics_path %></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <% if user_signed_in? %> 
