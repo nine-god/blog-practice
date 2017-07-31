@@ -8,11 +8,10 @@
 				<h1><%= @article.title %></h1>
 			</div>
 			<div id="show" >
-				<%= @article.text %>
-				<text_area  id="article_text" hidden=true}><%= @article.text %></text_area>
+				<%= raw @article.text %>
 			</div>
 			<div>
-			<%= link_to "111" ,"#" %>
+				<%= link_to "111" ,"#" %>
 			</div>
 		</div>
 		<div class="panel panel-default">

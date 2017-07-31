@@ -13,10 +13,10 @@
 //= require app
 
 $(document).on "turbolinks:load", ->
-	show_textarea()	
+	test_jquery()
 	$('#editor').wysiwyg()
 	window.prettyPrint && prettyPrint()
-	test_jquery()
+	
 
 
 
