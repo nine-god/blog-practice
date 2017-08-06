@@ -13,7 +13,6 @@
 //= require app
 
 $(document).on "turbolinks:load", ->
-	test_jquery()
 	$('#editor').wysiwyg()
 	window.prettyPrint && prettyPrint()
 	

@@ -1,32 +1,37 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <table class="table table-bordered">
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <table class="table table-striped table-bordered ">
         <thead>
             <tr class="info">
-               <th>访问者地址</th>
-               <th>访问url</th>
-               <th>备注</th>
-               <th>操作</th>
+              <th>ID</th>
+              <th>访问者地址</th>
+              <th>访问url</th>
+              <th>request_method</th>
+              <th>data</th>
+              <th>备注</th>
+              <th>操作</th>
             </tr>
          </thead>
          <% @staticstics.each_with_index do |staticstic,index| %>
           <%tr_class= (index%2==0)? "class=success": ""%>
           <tr <%= tr_class%>>
+            <td><%= staticstic.id %></td>
             <td><%= staticstic.url %></td>
             <td><%= staticstic.ip_addr %></td>
+            <td><%= staticstic.request_method %></td>
+            <td><%= staticstic.data %></td>
             <td><%= staticstic.remark %></td>
             <td><%= link_to '删除', blog_staticstic_path(staticstic),method: :delete, data: { confirm: '删除后不可恢复，确认需要删除吗？' } %></td>
           </tr>
         <% end %>
       </table>
+      <div class="text-center">
+        <ul class="pagination">
+          <%= generate_pagination(total: @total,offset: @offset , limit: @limit)%>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-      <ul class="pagination">
-        <%= generate_pagination(total: @total,offset: @offset , limit: @limit)%>
-      </ul>
-    </div>
+
   </div>
 </div>

@@ -1,7 +1,6 @@
 <div class="reply">
 	<div class="avatar">
 	<%= link_to comment.commenter ,"#"%>
-<!-- 	<%= link_to raw(image_tag(asset_path '1.png')),"#"%> -->
 	</div>
 	<div class="infos">
 		<div class="info">
@@ -9,16 +8,19 @@
 				<span class="name">
 		            <%= link_to comment.commenter %>
 		          </span> · 
-		         <span>
+		         <span class="text-success">
 		         #<%= comment.id %>
 		         </span> · 
+		         <span class="text-muted">
 				<%= comment.created_at.strftime("%Y年%m月%d日")%>
+				</span>
 			</div>
 			<div class="col-sm-4">
 				<%= link_to 'delete' , ['blog',comment.article.user,comment.article, comment] , method: :delete ,data: { confirm: 'Are you sure?' } %>
 			</div>
 		</div>
-		<div>
+		<div class="markdown">
+		
 			<%= comment.body %>
 		</div>
 	</div>

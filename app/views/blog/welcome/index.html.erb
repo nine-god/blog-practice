@@ -1,9 +1,12 @@
-<div>
+<div class="panel panel-default">
 	<% @users.each do |user| %>
-	<div class="col-md-8">
-	<%= link_to "#{user.blog_name}"+'的博客', blog_user_articles_path(user) %>
+	<div class="row">
+		<div class="col-md-12 center-block text-center">
+			<%= link_to "#{user.blog_name}"+'的博客', blog_user_articles_path(user) %>
+		</div>
 	</div>
 	<% end %>
-<div>
+</div>
+
 
 

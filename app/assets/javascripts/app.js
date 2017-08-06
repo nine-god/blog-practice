@@ -35,11 +35,8 @@ function test_ajax(){
 
 };
 
-function test_jquery(){
 
-  $("#test_jquery").on("click",function(){
-   alert(3333);
-  });
-
-};
-
+function goto_url(url,limit){
+	offset = ($('#page_num').val()-1)*limit
+	window.location.href=url+"?"+"offset="+offset+"&&"+ "limit="+limit;
+}

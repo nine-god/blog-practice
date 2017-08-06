@@ -1,3 +1,18 @@
-<%= render 'form' %>
- 
-<%= link_to 'Back', blog_user_articles_path(@user) %>
+<div class="row">
+	<div class="col-sm-9">
+		<div class="panel panel-default">
+			<%= render 'form' %>
+		</div>
+	</div>
+	 <div class="sidebar col-sm-3">
+		<div id="article_sidebar" class="panel panel-default">
+			<% 5.times do|i|  %>
+			<p><%= " #{i=i+1} 条占位专用 "%></p>
+			<p>回复:</p>
+			<% end%>
+			<%= link_to '返回', blog_user_articles_path(@user) %>
+		</div>
+	</div>
+</div>
+
+

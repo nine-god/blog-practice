@@ -6,4 +6,9 @@ class Blog::StaticsticsController < ApplicationController
 		@total = Staticstic.count
 		@staticstics = Staticstic.order("created_at").offset(@offset).limit(@limit)
 	end
+
+	def destroy
+		@staticstic = Staticstic.find(params[:id])
+		@staticstic.destroy
+	end
 end
